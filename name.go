@@ -2,60 +2,44 @@ package nameconv
 
 import "strings"
 
-type Name string
+type Name []string
 
 func (n Name) String() string {
-	return string(n)
-}
-
-func (n Name) ParseEnglish() []string {
-	words := strings.Split(n.String(), " ")
-	for i := range words {
-		filteredWord := filter(words[i], lowercaseLetters+capitalLetters)
-		if len(filteredWord) > 0 {
-			words[i] = strings.ToLower(filteredWord)
-		}
-	}
-	return words
+	return strings.Join(n, " ")
 }
 
 func (n Name) PascalCase() string {
-	words := n.ParseEnglish()
-	for i := range words {
-		words[i] = strings.Title(words[i])
+	for i := range n {
+		n[i] = strings.Title(n[i])
 	}
-	return strings.Join(words, "")
+	return strings.Join(n, "")
 }
 
 func (n Name) CamelCase() string {
-	words := n.ParseEnglish()
-	for i := range words {
+	for i := range n {
 		if i == 0 {
-			words[i] = strings.ToLower(words[i])
+			n[i] = strings.ToLower(n[i])
 		} else {
-			words[i] = strings.Title(words[i])
+			n[i] = strings.Title(n[i])
 		}
 	}
-	return strings.Join(words, "")
+	return strings.Join(n, "")
 }
 
 func (n Name) SnakeCase() string {
-	words := n.ParseEnglish()
-	for i := range words {
-		words[i] = strings.ToLower(words[i])
+	for i := range n {
+		n[i] = strings.ToLower(n[i])
 	}
-	return strings.Join(words, "_")
+	return strings.Join(n, "_")
 }
 
 func (n Name) KebabCase() string {
-	words := n.ParseEnglish()
-	for i := range words {
-		words[i] = strings.ToLower(words[i])
+	for i := range n {
+		n[i] = strings.ToLower(n[i])
 	}
-	return strings.Join(words, "-")
+	return strings.Join(n, "-")
 }
 
 func (n Name) AllLowerNoSpaces() string {
-	words := n.ParseEnglish()
-	return strings.Join(words, "")
+	return strings.Join(n, "")
 }
