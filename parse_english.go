@@ -16,5 +16,5 @@ func ParseEnglish(n string) (Name, error) {
 			words[i] = strings.ToLower(filteredWord)
 		}
 	}
-	return Name(words), nil
+	return Name{words}, nil
 }

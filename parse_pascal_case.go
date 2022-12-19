@@ -1,15 +1,25 @@
 package nameconv
 
-import "strings"
+import (
+	"strings"
+	"unicode"
+)
 
-func ParsePascalCase(n string) Name {
-	words := []string{}
-	for i := 0; i < len(n); i++ {
-		if n[i] >= 'A' && n[i] <= 'Z' {
-			words = append(words, strings.ToLower(string(n[i])))
+// ParsePascalCase parses a PascalCase name into a Name.
+// If the name is not valid PascalCase, an error is returned.
+func ParsePascalCase(s string) (*Name, error) {
+	err := ValidatePascalCase(s)
+	if err != nil {
+		return nil, err
+	}
+	n := &Name{}
+	for _, r := range s {
+		if unicode.IsUpper(r) {
+			s := strings.ToLower(string(r))
+			n.AppendWord(s)
 		} else {
-			words[len(words)-1] += string(n[i])
+			n.AppendRune(r)
 		}
 	}
-	return Name(words)
+	return n, nil
 }

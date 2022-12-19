@@ -17,7 +17,7 @@ func ValidateKebabCase(s string) error {
 		return ErrExpectedKebabCase
 	}
 	for _, r := range s {
-		if !unicode.IsUpper(r) && !unicode.IsLower(r) && !unicode.IsDigit(r) {
+		if !unicode.IsLower(r) && !unicode.IsDigit(r) && r != '-' {
 			return ErrExpectedKebabCase
 		}
 	}
