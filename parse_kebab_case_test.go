@@ -3,7 +3,7 @@ package nameconv_test
 import (
 	"testing"
 
-	"github.com/library-development/go-nameconv"
+	"lib.dev/nameconv"
 )
 
 func TestParseKebabCase(t *testing.T) {

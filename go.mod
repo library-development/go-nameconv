@@ -1,3 +1,3 @@
-module github.com/library-development/go-nameconv
+module lib.dev/nameconv
 
 go 1.19
