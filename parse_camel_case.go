@@ -1,7 +1,6 @@
 package nameconv
 
 import (
-	"fmt"
 	"strings"
 	"unicode"
 )
@@ -16,7 +15,6 @@ func ParseCamelCase(s string) (*Name, error) {
 	n := &Name{
 		Words: []string{},
 	}
-	fmt.Println(s)
 	for _, r := range s {
 		if unicode.IsUpper(r) {
 			st := strings.ToLower(string(r))
