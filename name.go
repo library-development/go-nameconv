@@ -81,3 +81,10 @@ func (n *Name) KebabCase() string {
 func (n *Name) AllLowerNoSpaces() string {
 	return strings.Join(n.Words, "")
 }
+
+func (n *Name) TitleCase() string {
+	for i := range n.Words {
+		n.Words[i] = strings.Title(n.Words[i])
+	}
+	return strings.Join(n.Words, " ")
+}
