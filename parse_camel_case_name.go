@@ -7,9 +7,9 @@ import (
 	"lib.dev/english"
 )
 
-// ParseCamelCaseName parses a camelCase name into a Name.
+// ParseCamelCase parses a camelCase name into a Name.
 // If the name is not valid camelCase, an error is returned.
-func ParseCamelCaseName(s string) (english.Name, error) {
+func ParseCamelCase(s string) (english.Name, error) {
 	err := validateCamelCase(s)
 	if err != nil {
 		return nil, err

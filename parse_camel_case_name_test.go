@@ -7,7 +7,7 @@ import (
 )
 
 func TestParseCamelCase(t *testing.T) {
-	n, err := nameconv.ParseCamelCaseName("")
+	n, err := nameconv.ParseCamelCase("")
 	if err != nameconv.ErrEmptyString {
 		t.Errorf("ParseCamelCase() error = \"%v\", want \"%v\"", err, nameconv.ErrEmptyString)
 	}
@@ -15,7 +15,7 @@ func TestParseCamelCase(t *testing.T) {
 		t.Errorf("ParseCamelCase() = \"%v\", want \"%v\"", n, nil)
 	}
 
-	n, err = nameconv.ParseCamelCaseName("hello")
+	n, err = nameconv.ParseCamelCase("hello")
 	if err != nil {
 		t.Errorf("ParseCamelCase() error = \"%v\"", err)
 	}
@@ -23,7 +23,7 @@ func TestParseCamelCase(t *testing.T) {
 		t.Errorf("ParseCamelCase() = \"%v\", want \"%v\"", n, nameconv.ConvertStringListToName([]string{"hello"}))
 	}
 
-	n, err = nameconv.ParseCamelCaseName("helloWorld")
+	n, err = nameconv.ParseCamelCase("helloWorld")
 	if err != nil {
 		t.Errorf("ParseCamelCase() error = \"%v\"", err)
 	}
