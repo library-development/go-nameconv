@@ -19,15 +19,15 @@ func TestParseKebabCase(t *testing.T) {
 	if err != nil {
 		t.Errorf("ParseKebabCase() error = \"%v\"", err)
 	}
-	if !n.Equal(&nameconv.Name{[]string{"hello"}}) {
-		t.Errorf("ParseKebabCase() = \"%v\", want \"%v\"", n, &nameconv.Name{[]string{"hello"}})
+	if !n.Equal(nameconv.ConvertStringListToName([]string{"hello"})) {
+		t.Errorf("ParseKebabCase() = \"%v\", want \"%v\"", n, nameconv.ConvertStringListToName([]string{"hello"}))
 	}
 
 	n, err = nameconv.ParseKebabCase("hello-world")
 	if err != nil {
 		t.Errorf("ParseKebabCase() error = \"%v\"", err)
 	}
-	if !n.Equal(&nameconv.Name{[]string{"hello", "world"}}) {
-		t.Errorf("ParseKebabCase() = \"%v\", want \"%v\"", n, &nameconv.Name{[]string{"hello", "world"}})
+	if !n.Equal(nameconv.ConvertStringListToName([]string{"hello", "world"})) {
+		t.Errorf("ParseKebabCase() = \"%v\", want \"%v\"", n, nameconv.ConvertStringListToName([]string{"hello", "world"}))
 	}
 }

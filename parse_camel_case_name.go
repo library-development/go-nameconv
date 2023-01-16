@@ -3,18 +3,18 @@ package nameconv
 import (
 	"strings"
 	"unicode"
+
+	"lib.dev/english"
 )
 
-// ParseCamelCase parses a camelCase name into a Name.
+// ParseCamelCaseName parses a camelCase name into a Name.
 // If the name is not valid camelCase, an error is returned.
-func ParseCamelCase(s string) (*Name, error) {
-	err := ValidateCamelCase(s)
+func ParseCamelCaseName(s string) (english.Name, error) {
+	err := validateCamelCase(s)
 	if err != nil {
 		return nil, err
 	}
-	n := &Name{
-		Words: []string{},
-	}
+	n := english.Name{}
 	for _, r := range s {
 		if unicode.IsUpper(r) {
 			st := strings.ToLower(string(r))

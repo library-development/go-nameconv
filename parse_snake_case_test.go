@@ -19,15 +19,15 @@ func TestParseSnakeCase(t *testing.T) {
 	if err != nil {
 		t.Errorf("ParseSnakeCase() error = %v", err)
 	}
-	if !n.Equal(&nameconv.Name{[]string{"hello"}}) {
-		t.Errorf("ParseSnakeCase() = %v, want %v", n, &nameconv.Name{[]string{"hello"}})
+	if !n.Equal(nameconv.ConvertStringListToName([]string{"hello"})) {
+		t.Errorf("ParseSnakeCase() = %v, want %v", n, nameconv.ConvertStringListToName([]string{"hello"}))
 	}
 
 	n, err = nameconv.ParseSnakeCase("hello_world")
 	if err != nil {
 		t.Errorf("ParseSnakeCase() error = %v", err)
 	}
-	if !n.Equal(&nameconv.Name{[]string{"hello", "world"}}) {
-		t.Errorf("ParseSnakeCase() = %v, want %v", n, &nameconv.Name{[]string{"hello", "world"}})
+	if !n.Equal(nameconv.ConvertStringListToName([]string{"hello", "world"})) {
+		t.Errorf("ParseSnakeCase() = %v, want %v", n, nameconv.ConvertStringListToName([]string{"hello", "world"}))
 	}
 }

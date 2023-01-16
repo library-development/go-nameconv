@@ -1,13 +1,17 @@
 package nameconv
 
-import "strings"
+import (
+	"strings"
+
+	"lib.dev/english"
+)
 
 // ParseEnglish parses names that use the English alphabet and spaces to separate words.
 // If there is a non-letter character in the name, it will be ignored.
 // If the name is empty, an error is returned.
-func ParseEnglish(n string) (Name, error) {
+func ParseEnglish(n string) (english.Name, error) {
 	if len(n) == 0 {
-		return Name{}, ErrEmptyString
+		return english.Name{}, ErrEmptyString
 	}
 	words := strings.Split(n, " ")
 	for i := range words {
@@ -16,5 +20,5 @@ func ParseEnglish(n string) (Name, error) {
 			words[i] = strings.ToLower(filteredWord)
 		}
 	}
-	return Name{words}, nil
+	return ConvertStringListToName(words), nil
 }

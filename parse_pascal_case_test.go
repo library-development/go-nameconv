@@ -27,15 +27,15 @@ func TestParsePascalCase(t *testing.T) {
 	if err != nil {
 		t.Errorf("ParsePascalCase() error = \"%v\"", err)
 	}
-	if !n.Equal(&nameconv.Name{[]string{"hello"}}) {
-		t.Errorf("ParsePascalCase() = \"%v\", want \"%v\"", n, &nameconv.Name{[]string{"hello"}})
+	if !n.Equal(nameconv.ConvertStringListToName([]string{"hello"})) {
+		t.Errorf("ParsePascalCase() = \"%v\", want \"%v\"", n, nameconv.ConvertStringListToName([]string{"hello"}))
 	}
 
 	n, err = nameconv.ParsePascalCase("HelloWorld")
 	if err != nil {
 		t.Errorf("ParsePascalCase() error = \"%v\"", err)
 	}
-	if !n.Equal(&nameconv.Name{[]string{"hello", "world"}}) {
-		t.Errorf("ParsePascalCase() = \"%v\", want \"%v\"", n, &nameconv.Name{[]string{"hello", "world"}})
+	if !n.Equal(nameconv.ConvertStringListToName([]string{"hello", "world"})) {
+		t.Errorf("ParsePascalCase() = \"%v\", want \"%v\"", n, nameconv.ConvertStringListToName([]string{"hello", "world"}))
 	}
 }
