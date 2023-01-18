@@ -4,7 +4,7 @@ import (
 	"strings"
 	"unicode"
 
-	"lib.dev/english"
+	"github.com/library-development/go-english"
 )
 
 // ParsePascalCase parses a PascalCase name into a Name.

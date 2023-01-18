@@ -3,8 +3,8 @@ package nameconv_test
 import (
 	"testing"
 
-	"lib.dev/english"
-	"lib.dev/nameconv"
+	"github.com/library-development/go-english"
+	"github.com/library-development/go-nameconv"
 )
 
 func TestParseEnglish(t *testing.T) {

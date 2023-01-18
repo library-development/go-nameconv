@@ -4,7 +4,7 @@ import (
 	"strings"
 	"unicode"
 
-	"lib.dev/english"
+	"github.com/library-development/go-english"
 )
 
 // ParseCamelCase parses a camelCase name into a Name.

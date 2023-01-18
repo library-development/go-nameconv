@@ -3,7 +3,7 @@ package nameconv
 import (
 	"strings"
 
-	"lib.dev/english"
+	"github.com/library-development/go-english"
 )
 
 // ParseEnglish parses names that use the English alphabet and spaces to separate words.

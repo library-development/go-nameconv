@@ -3,7 +3,7 @@ package nameconv
 import (
 	"strings"
 
-	"lib.dev/english"
+	"github.com/library-development/go-english"
 )
 
 // ParseSnakeCase parses a snake_case string into a Name.

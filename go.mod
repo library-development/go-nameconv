@@ -1,5 +1,5 @@
-module lib.dev/nameconv
+module github.com/library-development/go-nameconv
 
 go 1.19
 
-require lib.dev/english v0.0.0-20230115212210-7ff5646e0ab1
+require github.com/library-development/go-english v0.0.0-20230118225749-8397028d3860

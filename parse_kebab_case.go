@@ -3,7 +3,7 @@ package nameconv
 import (
 	"strings"
 
-	"lib.dev/english"
+	"github.com/library-development/go-english"
 )
 
 // ParseKebabCase parses a kebab-case string into a Name.

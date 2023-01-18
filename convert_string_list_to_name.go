@@ -1,7 +1,7 @@
 package nameconv
 
 import (
-	"lib.dev/english"
+	"github.com/library-development/go-english"
 )
 
 func ConvertStringListToName(list []string) english.Name {
